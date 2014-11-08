@@ -33,7 +33,7 @@ public class TPALCD {
         if (instance != null)
         {
             // Remove the pointer to the instance and garbage collect the now
-            // un-accessible data.
+            // inaccessible data.
             instance = null;
             System.gc();
         }
