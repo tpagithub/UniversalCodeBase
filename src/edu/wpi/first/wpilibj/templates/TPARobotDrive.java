@@ -1,6 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ /*
+ *  TPA Robot Drive
+ *  Version: 0.1
+ *  Desc: Allows polar mecanum driving using the TPAJoystick class and 4 speed controllers.
  */
 package edu.wpi.first.wpilibj.templates;
 
