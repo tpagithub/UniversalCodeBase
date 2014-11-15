@@ -26,6 +26,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 public class RobotTemplate extends IterativeRobot {
     private TPAJoystick joystick;
     private TPARobotDrive robotDrive;
+    private TPAServo servo;
     
     /**
      * This function is run when the robot is first started up and should be
@@ -35,6 +36,7 @@ public class RobotTemplate extends IterativeRobot {
         TPALCD.deleteInstance();
         joystick = new TPAJoystick(RobotMap.joystickOnePort);
         robotDrive = new TPARobotDrive(RobotMap.frontLeftPort, RobotMap.rearLeftPort, RobotMap.frontRightPort, RobotMap.rearRightPort, joystick);
+        servo = new TPAServo(RobotMap.servoPort, joystick);
     }
 
     /**
@@ -49,6 +51,7 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void teleopPeriodic() {
         robotDrive.mecanumDrive_Polar();
+        servo.runServo();
     }
     
     /**
