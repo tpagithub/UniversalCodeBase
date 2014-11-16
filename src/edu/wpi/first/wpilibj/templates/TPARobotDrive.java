@@ -23,7 +23,7 @@ public class TPARobotDrive extends RobotDrive {
     
     public void mecanumDrive_Polar() {
         double throttle=(joystick.getRawAxis(4) - 1) / -2;
-        TPALCD.getInstance().println(1, "Speed multiplier: x" + throttle);
+        TPALCD.getInstance().println(1, "Speed mult: x" + throttle);
         SmartDashboard.putNumber("Speed multiplier", throttle);
         m_magnitude = joystick.getMagnitude() * throttle;
         m_direction = joystick.getDirectionDegrees();

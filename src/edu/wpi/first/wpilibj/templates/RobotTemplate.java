@@ -13,6 +13,7 @@ package edu.wpi.first.wpilibj.templates;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.RobotDrive;
 
 /**
  * Desc: The VM is configured to automatically run this class, and to call the
@@ -36,7 +37,9 @@ public class RobotTemplate extends IterativeRobot {
         TPALCD.deleteInstance();
         joystick = new TPAJoystick(RobotMap.joystickOnePort);
         robotDrive = new TPARobotDrive(RobotMap.frontLeftPort, RobotMap.rearLeftPort, RobotMap.frontRightPort, RobotMap.rearRightPort, joystick);
-        servo = new TPAServo(RobotMap.servoPort, joystick);
+        //servo = new TPAServo(RobotMap.servoPort, joystick);
+        robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+        robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
     }
 
     /**
@@ -51,7 +54,8 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void teleopPeriodic() {
         robotDrive.mecanumDrive_Polar();
-        servo.runServo();
+        //servo.runServo();
+        TPALCD.getInstance().println(2, joystick.getDirectionDegrees() + "");
     }
     
     /**
