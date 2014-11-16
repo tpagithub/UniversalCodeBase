@@ -5,6 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -21,8 +22,8 @@ public class TPARobotDrive extends RobotDrive {
     }
     
     public void mecanumDrive_Polar() {
-        double throttle=(joystick.getZ()- 1) / -2;
-        TPALCD.getInstance().println(1, "Speed multiplier: x" + throttle);
+        double throttle=(joystick.getRawAxis(4) - 1) / -2;
+        TPALCD.getInstance().println(1, "Speed mult: x" + throttle);
         SmartDashboard.putNumber("Speed multiplier", throttle);
         m_magnitude = joystick.getMagnitude() * throttle;
         m_direction = joystick.getDirectionDegrees();
