@@ -1,7 +1,7 @@
 /*
  *  TPA Joystick Class
  *  Version: 0.1
- *  Desc: Adds additional functionality to the FRC Joystick class.
+ *  Desc: Adds additional functionality to the FRC Joystick class
  */
 
 package edu.wpi.first.wpilibj.templates;
