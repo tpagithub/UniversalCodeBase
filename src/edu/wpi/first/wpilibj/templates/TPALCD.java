@@ -9,13 +9,19 @@ import edu.wpi.first.wpilibj.DriverStationLCD;
 
 public class TPALCD {
 
+    // Variable Declaration Section
     private DriverStationLCD lcd;
     private static TPALCD instance = null;
     private String line[];
+    private static final int LINE_COUNT = 6;
 
     private TPALCD() {
         lcd = DriverStationLCD.getInstance();
-        line = new String[]{null, null, null, null, null, null};
+        line = new String[LINE_COUNT];
+        for (int i = 0; i < LINE_COUNT; i++)
+        {
+            line[i] = null;
+        }
     }
     public static TPALCD getInstance(){
         if (instance == null) {
