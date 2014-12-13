@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*/
 /*  TPA Joystick Class                                                        */  
 /*  Version: 0.1                                                              */  
-/*  Desc: Adds additional functionality to the FRC Joystick class             */
+/*  Desc: Adds additional functionality to the FRC Joystick class.            */
 
 /* Copyright (c) FIRST 2008. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
