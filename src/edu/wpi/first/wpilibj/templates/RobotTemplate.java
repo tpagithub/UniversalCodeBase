@@ -21,13 +21,15 @@ import edu.wpi.first.wpilibj.RobotDrive;
  * documentation.If you change the name of this class or the package after
  * creating this project, you must also update the manifest file in the resource
  * directory.
- * Version: 0.1
+ * Version: 0.2
  */
 
 public class RobotTemplate extends IterativeRobot {
     private TPAJoystick joystick;
     private TPARobotDrive robotDrive;
-    private TPAServo servo;
+//    private TPAServo servo;
+    
+    private DriveTrainTester driveTrainTester;
     
     /**
      * This function is run when the robot is first started up and should be
@@ -40,6 +42,8 @@ public class RobotTemplate extends IterativeRobot {
         //servo = new TPAServo(RobotMap.servoPort, joystick);
         robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+        
+        driveTrainTester = new DriveTrainTester(joystick, robotDrive);
     }
 
     /**
@@ -58,11 +62,15 @@ public class RobotTemplate extends IterativeRobot {
         TPALCD.getInstance().println(2, joystick.getDirectionDegrees() + "");
     }
     
+    public void testInit() {
+        driveTrainTester.reset();
+    }
+    
     /**
      * This function is called periodically during test mode
      */
     public void testPeriodic() {
-    
+        driveTrainTester.run();
     }
     
 }
