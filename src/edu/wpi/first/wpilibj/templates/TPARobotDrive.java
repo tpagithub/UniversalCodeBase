@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class TPARobotDrive extends RobotDrive {
@@ -30,5 +31,25 @@ public class TPARobotDrive extends RobotDrive {
         m_rotation = joystick.getTwist() * throttle;
         
         mecanumDrive_Polar(m_magnitude, m_direction, m_rotation);
+    }
+
+    public SpeedController getFrontLeftMotor()
+    {
+        return m_frontLeftMotor;
+    }
+
+    public SpeedController getFrontRightMotor()
+    {
+        return m_frontRightMotor;
+    }
+
+    public SpeedController getRearLeftMotor()
+    {
+        return m_rearLeftMotor;
+    }
+
+    public SpeedController getRearRightMotor()
+    {
+        return m_rearRightMotor;
     }
 }
